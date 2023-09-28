@@ -19,13 +19,13 @@ function Carros(props) {
     return (
         <div className="container">
             <Row>
-                <h1>Carros</h1>
+                <h1  style={{color: 'white'}}>Carros</h1>
                 
             </Row>
 
             <Row>
                 <Col>
-                    <h2 className="mt-2">Listado de carros</h2>
+                    <h2 className="mt-2" style={{color: 'white'}}>Listado de carros</h2>
                     <hr></hr>
                     <Row>
                         {carros.map(carro => (

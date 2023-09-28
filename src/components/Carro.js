@@ -1,23 +1,27 @@
 
 import Card from 'react-bootstrap/Card';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function Carro(props){
-   return(
-       <Card style={{ width: '18rem', height: '24rem' }} className="mb-3">
+function Carro(props) {
+    return (
+        <Link style={{textDecoration: 'none'}} to={"/Carros/" + props.carro.carModel}>
+            <Card style={{ width: '18rem', height: '24rem', border: '5px solid'}} className="mb-3">
+                <Card.Body style={{textAlign:'left'}}>
+                    <Card.Img variant="top" src={props.carro.image} />
+                    <Card.Title style={{fontSize: '2em'}}>
+                        {props.carro.partName}
+                    </Card.Title>
+                    <Card.Title>
+                        {props.carro.carMaker}
+                    </Card.Title>
+                    <Card.Text>
+                        {props.carro.price} - {props.carro.carYear}
+                    </Card.Text>
+                </Card.Body>
 
-           <Card.Body>
-               <Card.Title>
-               <Link to={"/Carro/" + props.carro.carModel}  > 
-                {props.carro.carModel}
-                </Link>
-                </Card.Title>
-               <Card.Text>
-                   {props.carro.description}
-               </Card.Text>
-           </Card.Body>
-       </Card>
-   );
+            </Card>
+        </Link>
+    );
 }
 
 export default Carro;

@@ -4,6 +4,7 @@ import './App.css';
 import Login from './components/Login';
 import { BrowserRouter, Routes, Route, Navigate, useNavigate} from "react-router-dom";
 import Carros from './components/Carros';
+import CarroDetail from './components/CarroDetail';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <Routes> 
           <Route path="/" element={<Login/>} />
           <Route path="/Carros" element={<Carros/>} />
-          <Route path="/Carro/:carModel" element={<Carros />} /> 
+          <Route path="/Carros/:carModel" element={<CarroDetail />} /> 
         </Routes>
       </BrowserRouter>
     </div>
