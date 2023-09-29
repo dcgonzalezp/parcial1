@@ -8,6 +8,7 @@ import CarroDetail from "./CarroDetail";
 function Carros(props) {
     const location = useLocation();
     const [carros, setCarros] = useState([]);
+    const [carroSelected, setCarroSelected] = useState()
 
     useEffect(() => {
         const URL = "https://raw.githubusercontent.com/dcgonzalezp/parcial1/master/datos.json";
@@ -18,22 +19,34 @@ function Carros(props) {
 
     return (
         <div className="container">
-            <Row>
-                <h1  style={{color: 'white'}}>Carros</h1>
-                
+            <Row style={{
+                display: 'block'
+            }}>
+                <h1 style={{ color: 'white' }}>Carros</h1>
             </Row>
 
             <Row>
-                <Col>
-                    <h2 className="mt-2" style={{color: 'white'}}>Listado de carros</h2>
-                    <hr></hr>
+                <Col style={{
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignContent: 'center'
+                }}>
+                    <h2 className="mt-2" style={{ color: 'white' }}>Listado de carros</h2>
+                    <hr style={{border: '2px dashed', opacity: .8}}></hr>
                     <Row>
                         {carros.map(carro => (
-                            <Col>
-                                <Carro carro={carro}/>
+                            <Col style={{
+                                padding: 0,
+                                margin: 0,
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignContent: 'center'
+                            }}>
+                                <Carro carro={carro} />
                             </Col>))
                         }
-
                     </Row>
                 </Col>
 

@@ -9,7 +9,8 @@ import { useNavigate } from "react-router-dom";
 function Login(props) {
     const navigate = useNavigate();
     const [formValues, setFormValues] = useState({ email: "", password: "" })
-    const [validationStates, setValidationStates] = useState({ emailState: false, passwordState: false })
+    const [validationStates, setValidationStates] = useState({ emailState: true, passwordState: false })
+    const [emailLogged, setEmailLogged] = useState(false)
 
     const handleEmailChange = ((e) => {
         setFormValues({ ...formValues, email: e.target.value })
@@ -30,6 +31,9 @@ function Login(props) {
     const clickNext = (() => {
         if (formValues.email.includes("@")) {
             setValidationStates({ ...validationStates, emailState: true });
+            setEmailLogged(true)
+        } else{
+            setValidationStates({ ...validationStates, emailState: false });
         }
     })
 
@@ -47,32 +51,32 @@ function Login(props) {
 
 
     return (
-        <Container className="shadow-lg" style={{ width: "40%", padding: "5%", backgroundColor: "#fff", borderRadius: '20px' }}>
+        <Container className="shadow-lg" style={{ width: "40%", padding: "20px", backgroundColor: "#fff", borderRadius: '20px' }}>
             <Row>
                 <Col>
                     <h1>Acceder</h1>
                     <Form>
-                        {validationStates.emailState == false &&
+                        {emailLogged == false &&
                             <Form.Group className='mb-3' controlId='formBasicEmail'>
                                 <Form.Label className="mb-4">Usa tu cuenta uniandes</Form.Label>
-                                <Form.Control size="lg" type='email' placeholder='Correo electrónico' onChange={handleEmailChange} value={formValues.email} className={!validationStates.emailState ? 'is-invalid' : ''} />
-                                {!validationStates.emailState && <Form.Text className='text-muted'>Your email is invalid</Form.Text>}
-                                {validationStates.emailState && <Form.Text className='text-muted'>We'll never share your email with anyoneelse.</Form.Text>}
+                                <Form.Control type='email' placeholder='Correo electrónico' onChange={handleEmailChange} value={formValues.email} className={!validationStates.emailState ? 'is-invalid' : ''} />
+                                {!validationStates.emailState && <Form.Text className='text-muted'>Email inválido, intente de nuevo</Form.Text>}
+                                {validationStates.emailState && <Form.Text className='text-muted'>No lo compartiremos con nadie</Form.Text>}
                                 <Row><p className="text-start fw-bold mt-3" style={{ color: '#0d6efd' }}>¿Olvidaste tu correo electrónico?</p></Row>
                                 <Row>
                                     <Col><p className="text-start align-bottom" style={{ color: '#0d6efd' }}>Crear cuenta</p></Col>
-                                    <Col md={{ span: 4, offset: 4 }}><Button variant="primary" onClick={clickNext}>Siguiente</Button></Col>
+                                    <Col ><Button variant="primary" onClick={clickNext}>Siguiente</Button></Col>
                                 </Row>
                             </Form.Group>
                         }
 
-                        {validationStates.emailState == true &&
+                        {emailLogged == true &&
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Control plaintext readOnly defaultValue={formValues.email} style={{ textAlign: 'center' }} />
                                 <Form.Control type="password" placeholder="Ingresa tu contraseña" onChange={handlePasswordChange} value={formValues.password} className={!validationStates.passwordState ? 'is-invalid' : ''} />
-                                {!validationStates.passwordState && <Form.Text className="text-muted">Your password should be have numbers and letters and should be at least 6 char long</Form.Text>}
+                                {!validationStates.passwordState && <Form.Text className="text-muted">La contraseña debe tener al menos 6 caracteres</Form.Text>}
                                 <Row>
-                                    <Col><Button variant="primary" onClick={clickSubmit} style={{ width: "10em", margin: '10px auto' }}>Enviar</Button></Col>
+                                    <Col><Button variant="primary" onClick={clickSubmit} style={{ width: "10em", marginTop: '20px' }}>Enviar</Button></Col>
                                 </Row>
                             </Form.Group>}
 
