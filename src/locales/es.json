@@ -1,0 +1,33 @@
+{
+  "LogIn":{
+    "acceder": "Acceder",
+    "uniandes": "Usa tu cuenta uniandes",
+    "labelCorreo": "Correo electrónico",
+    "correoInvalido": "Correo inválido, intente de nuevo",
+    "noCompartir": "No lo compartiremos con nadie",
+    "olvidar": "¿Olvidaste tu correo electrónico?",
+    "crear": "Crear cuenta",
+    "siguiente": "Siguiente",
+
+
+    "labelContra": "Ingresa tu contraseña",
+    "contraInvalida": "La contraseña debe tener al menos 6 caracteres",
+    "enviar": "Enviar"
+  },
+
+  "listadoCarros":{
+    "carros": "Carros",
+    "listado": "Listado carros"
+  },
+
+  "detalleCarro":{
+    "fabricante": "Fabricante",
+    "modelo": "Modelo",
+    "año": "Año",
+    "dispo": "Disponibilidad en línea",
+    "dispoSi": "Si",
+    "precio": "Precio",
+    "descripcion": "Descripción:"
+  }
+  
+}

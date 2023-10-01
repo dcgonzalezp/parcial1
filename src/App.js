@@ -5,10 +5,12 @@ import Login from './components/Login';
 import { BrowserRouter, Routes, Route, Navigate, useNavigate} from "react-router-dom";
 import Carros from './components/Carros';
 import CarroDetail from './components/CarroDetail';
+import Layout from './components/Layout';
 
 
 function App() {
   return (
+    <Layout>
     <div className="App">
       <BrowserRouter>
         <Routes> 
@@ -18,6 +20,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+    </Layout>
   );
 }
 

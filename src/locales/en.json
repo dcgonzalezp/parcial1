@@ -1,0 +1,32 @@
+{
+  "LogIn":{
+    "acceder": "Sign in",
+    "uniandes": "Use your uniandes account",
+    "labelCorreo": "Email",
+    "invalido": "Invalid email, try again",
+    "noCompartir": "We'll never share your email with anyone",
+    "olvidar": "Forgot your email?",
+    "crear": "Sign up",
+    "siguiente": "Next",
+
+
+    "labelContra": "Enter your password",
+    "contraInvalida": "The password must have at least 6 characters",
+    "enviar": "Submit"
+  },
+  
+  "listadoCarros":{
+    "carros": "Cars",
+    "listado": "Cars list"
+  },
+
+  "detalleCarro":{
+    "fabricante": "Maker",
+    "modelo": "Model",
+    "año": "Year",
+    "dispo": "Online availability",
+    "dispoSi": "Yes",
+    "precio": "Price",
+    "descripcion": "Description:"
+  }
+}
