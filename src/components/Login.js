@@ -60,7 +60,7 @@ function Login(props) {
       <Container
         className="shadow-lg"
         style={{
-          width: "40%",
+          width: "500px",
           padding: "20px",
           backgroundColor: "#fff",
           borderRadius: "20px",
